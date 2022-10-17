@@ -2,9 +2,10 @@
 
 void	push_swap(int ac, char **av)
 {
-	t_node	*deq;
+	t_node	*deq[2];
 
 	if (input_err(ac, av))
 		exit(1);
-	deq = push_data_to_deq(ac, av);
+	deq[0] = push_data_to_deq(ac, av);
+	deq[1] = 0;
 }
