@@ -1,5 +1,11 @@
 #include "push_swap.h"
 
+t_node	*new_node(int data);
+t_node	*deq_append_back(t_node *deq, t_node *new_node);
+t_node	*deq_append_front(t_node *deq, t_node *new_node);
+t_node	*deq_pop_head(t_node *deq);
+t_node	*deq_pop_tail(t_node *deq);
+
 t_node	*new_node(int data)
 {
 	t_node	*new_node;
