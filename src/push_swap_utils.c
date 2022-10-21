@@ -12,42 +12,52 @@
 
 #include "push_swap.h"
 
-void	sa(t_node *deq[2]);
-void	sb(t_node *deq[2]);
-void	ss(t_node *deq[2]);
-void	pa(t_node *deq[2]);
-void	pb(t_node *deq[2]);
+t_deqs	*sa(t_deqs	*deqs);
+t_deqs	*sb(t_deqs	*deqs);
+t_deqs	*ss(t_deqs	*deqs);
+t_deqs	*pa(t_deqs	*deqs);
+t_deqs	*pb(t_deqs	*deqs);
 
-void	sa(t_node *deq[2])
+t_deqs	*sa(t_deqs	*deqs)
 {
-	swap_head_neck(deq[0]);
+	deqs->deq_a = swap_head_neck(deqs->deq_a);
+	ft_printf("sa\n");
+	return (deqs);
 }
 
-void	sb(t_node *deq[2])
+t_deqs	*sb(t_deqs	*deqs)
 {
-	swap_head_neck(deq[1]);
+	deqs->deq_b = swap_head_neck(deqs->deq_b);
+	ft_printf("sb\n");
+	return (deqs);
 }
 
-void	ss(t_node *deq[2])
+t_deqs	*ss(t_deqs	*deqs)
 {
-	swap_head_neck(deq[0]);
-	swap_head_neck(deq[1]);
+	deqs->deq_a = swap_head_neck(deqs->deq_a);
+	deqs->deq_b = swap_head_neck(deqs->deq_b);
+	ft_printf("ss\n");
+	return (deqs);
 }
 
-void	pa(t_node *deq[2])
+t_deqs	*pa(t_deqs	*deqs)
 {
-	if (deq[1])
+	if (deqs->deq_b)
 	{
-		deq_append_front(deq[0], deq[1]);
-		deq_pop_head(deq[1]);
+		deqs->deq_a = deq_append_front(deqs->deq_a, deqs->deq_b);
+		deq_pop_head(deqs->deq_b);
+		ft_printf("pa\n");
 	}
+	return (deqs);
 }
 
-void	pb(t_node *deq[2])
+t_deqs	*pb(t_deqs	*deqs)
 {
-	if (deq[0])
+	if (deqs->deq_a)
 	{
-		deq_append_front(deq[1], deq[0]);
-		deq_pop_head(deq[0]);
+		deqs->deq_b = deq_append_front(deqs->deq_b, deqs->deq_a);
+		deq_pop_head(deqs->deq_a);
+		ft_printf("pb\n");
 	}
+	return (deqs);
 }

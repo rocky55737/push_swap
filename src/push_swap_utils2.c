@@ -12,22 +12,28 @@
 
 #include "push_swap.h"
 
-void	ra(t_node *deq[2]);
-void	rb(t_node *deq[2]);
-void	rr(t_node *deq[2]);
+t_deqs	*ra(t_deqs	*deqs);
+t_deqs	*rb(t_deqs	*deqs);
+t_deqs	*rr(t_deqs	*deqs);
 
-void	ra(t_node *deq[2])
+t_deqs	*ra(t_deqs	*deqs)
 {
-	head_move_to_tail(deq[0]);
+	deqs->deq_a = head_move_to_tail(deqs->deq_a);
+	ft_printf("ra\n");
+	return (deqs);
 }
 
-void	rb(t_node *deq[2])
+t_deqs	*rb(t_deqs	*deqs)
 {
-	head_move_to_tail(deq[1]);
+	deqs->deq_b = head_move_to_tail(deqs->deq_b);
+	ft_printf("rb\n");
+	return (deqs);
 }
 
-void	rr(t_node *deq[2])
+t_deqs	*rr(t_deqs	*deqs)
 {
-	head_move_to_tail(deq[0]);
-	head_move_to_tail(deq[1]);
+	deqs->deq_a = head_move_to_tail(deqs->deq_a);
+	deqs->deq_b = head_move_to_tail(deqs->deq_b);
+	ft_printf("rr\n");
+	return (deqs);
 }

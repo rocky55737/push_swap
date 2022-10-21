@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 
 typedef struct s_node
 {
@@ -24,6 +25,13 @@ typedef struct s_node
 	t_node	*front;
 	t_node	*back;
 }	t_node;
+
+typedef struct s_deqs
+{
+	t_node	*deq_a;
+	t_node	*deq_b;
+}	t_deqs;
+
 
 void	write_err(char	*err_msg);
 
