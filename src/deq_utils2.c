@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   deq_utils2.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/21 13:15:23 by rhong             #+#    #+#             */
+/*   Updated: 2022/10/21 13:15:39 by rhong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_node	*head_move_to_tail(t_node *deq);
@@ -14,7 +26,7 @@ t_node	*head_move_to_tail(t_node *deq)
 	tmp = deq;
 	deq = deq_append_back(deq, new_node(tmp->data));
 	deq = deq_pop_head(deq);
-	return (deq); 
+	return (deq);
 }
 
 t_node	*tail_move_to_head(t_node *deq)
@@ -34,7 +46,7 @@ t_node	*tail_move_to_head(t_node *deq)
 t_node	*swap_head_neck(t_node *deq)
 {
 	t_node	*tmp;
-	
+
 	if (deq == 0 || deq->back == 0)
 		return (deq);
 	tmp = deq->back;

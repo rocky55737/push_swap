@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   input_err.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/21 13:16:19 by rhong             #+#    #+#             */
+/*   Updated: 2022/10/21 13:16:31 by rhong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	input_err(int ac, char **av);
@@ -6,7 +18,6 @@ int	str_ptr_input_err(int input_num, char **input);
 
 int	input_err(int ac, char **av)
 {
-
 	if (ac < 2)
 	{
 		write_err("push swap: more argument is required\n");

@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   set_index.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/21 13:17:48 by rhong             #+#    #+#             */
+/*   Updated: 2022/10/21 13:18:21 by rhong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	set_index(t_node *deq);
 void	bubble_sort_data(int *datas, int len);
-
 
 void	set_index(t_node *deq)
 {
@@ -15,7 +26,7 @@ void	set_index(t_node *deq)
 	cnt = 0;
 	while (cnt < len)
 	{
-		datas[cnt] = deq_get_data_by_index(cnt);
+		datas[cnt] = deq_get_data_by_index(deq, cnt);
 		cnt++;
 	}
 	bubble_sort_data(datas, len);
