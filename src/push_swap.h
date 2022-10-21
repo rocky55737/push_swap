@@ -54,17 +54,17 @@ t_node	*deq_get_node_by_data(t_node *deq, int data);
 int		deq_get_max_data(t_node *deq);
 int		deq_get_min_data(t_node *deq);
 
-void	sa(t_node *deq[2]);
-void	sb(t_node *deq[2]);
-void	ss(t_node *deq[2]);
-void	pa(t_node *deq[2]);
-void	pb(t_node *deq[2]);
-void	ra(t_node *deq[2]);
-void	rb(t_node *deq[2]);
-void	rr(t_node *deq[2]);
-void	rra(t_node *deq[2]);
-void	rrb(t_node *deq[2]);
-void	rrr(t_node *deq[2]);
+t_deqs	*sa(t_deqs	*deqs);
+t_deqs	*sb(t_deqs	*deqs);
+t_deqs	*ss(t_deqs	*deqs);
+t_deqs	*pa(t_deqs	*deqs);
+t_deqs	*pb(t_deqs	*deqs);
+t_deqs	*ra(t_deqs	*deqs);
+t_deqs	*rb(t_deqs	*deqs);
+t_deqs	*rr(t_deqs	*deqs);
+t_deqs	*rra(t_deqs	*deqs);
+t_deqs	*rrb(t_deqs	*deqs);
+t_deqs	*rrr(t_deqs	*deqs);
 
 t_node	*set_index(t_node *deq);
 
