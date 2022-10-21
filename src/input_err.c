@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:16:19 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/21 13:16:31 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/21 13:35:35 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int	string_input_err(char *input)
 	cnt = 0;
 	if (input[cnt] >= '0' && input[cnt] <= '9')
 	{
-		while (input[cnt] && (input[cnt] >= '0' && input[cnt] <= '9') || input[cnt] == ' ')
+		while (input[cnt] && \
+		((input[cnt] >= '0' && input[cnt] <= '9') || input[cnt] == ' '))
 			cnt++;
 		if (input[cnt] == 0 && (input[cnt - 1] >= '0' && input[cnt - 1] <= '9'))
 			return (0);
@@ -62,7 +63,8 @@ int	str_ptr_input_err(int input_num, char **input)
 		str_cnt = 0;
 		while (input[input_cnt][str_cnt])
 		{
-			if (input[input_cnt][str_cnt] < '0' || input[input_cnt][str_cnt] > '9')
+			if (input[input_cnt][str_cnt] < '0' \
+			|| input[input_cnt][str_cnt] > '9')
 				return (1);
 			str_cnt++;
 		}
