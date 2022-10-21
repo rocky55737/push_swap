@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:16:19 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/21 13:35:35 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/21 13:44:38 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int	str_ptr_input_err(int input_num, char **input)
 	int	str_cnt;
 
 	input_cnt = 1;
+	if (!input[input_cnt])
+		reutrn (1);
 	while (input_cnt < input_num)
 	{
 		str_cnt = 0;
