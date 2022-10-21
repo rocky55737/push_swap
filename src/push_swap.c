@@ -14,11 +14,11 @@
 
 void	push_swap(int ac, char **av)
 {
-	t_node	*deq[2];
+	t_deqs	*deqs;
 
 	if (input_err(ac, av))
 		exit(1);
-	deq[0] = push_data_to_deq(ac, av);
-	deq[1] = 0;
-	deq[0] = set_index(deq[0]);
+	deqs->deq_a = push_data_to_deq(ac, av);
+	deqs->deq_b = 0;
+	deqs->deq_a = set_index(deqs->deq_a);
 }
