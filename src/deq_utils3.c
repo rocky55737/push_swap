@@ -15,6 +15,8 @@
 int		deq_len(t_node *deq);
 int		deq_get_data_by_index(t_node *deq, int index);
 t_node	*deq_get_node_by_data(t_node *deq, int data);
+int		deq_get_max_data(t_node *deq);
+int		deq_get_min_data(t_node *deq);
 
 int	deq_len(t_node *deq)
 {
@@ -63,4 +65,36 @@ t_node	*deq_get_node_by_data(t_node *deq, int data)
 		tmp = tmp->back;
 	}
 	return (0);
+}
+
+int	deq_get_max_data(t_node *deq)
+{
+	int	max;
+	
+	if (!deq)
+		return (0);
+	max = deq->data;
+	while (deq)
+	{
+		if (max < deq->data)
+			max = deq->data;
+		deq = deq->back;
+	}
+	return (max);
+}
+
+int	deq_get_min_data(t_node *deq)
+{
+	int	min;
+	
+	if (!deq)
+		return (0);
+	min = deq->data;
+	while (deq)
+	{
+		if (min > deq->data)
+			min = deq->data;
+		deq = deq->back;
+	}
+	return (min);
 }

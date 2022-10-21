@@ -43,6 +43,8 @@ t_node	*head_dup_to_other_head(t_node *deq_s, t_node *deq_d);
 int		deq_len(t_node *deq);
 int		deq_get_data_by_index(t_node *deq, int index);
 t_node	*deq_get_node_by_data(t_node *deq, int data);
+int		deq_get_max_data(t_node *deq);
+int		deq_get_min_data(t_node *deq);
 
 void	sa(t_node *deq[2]);
 void	sb(t_node *deq[2]);
