@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:16:50 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/21 13:45:03 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/21 17:02:54 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,39 @@ t_node	*push_string_to_deq(char *str)
 {
 	char	**datas;
 	int		datas_cnt;
+	t_node	*ret;
 
+	datas = ft_split(str, ' ');
+	datas_cnt = 0;
+	while (datas[datas_cnt])
+	{
+		if (datas_cnt == 0)
+			ret = new_node(ft_atoi(datas[datas_cnt]));
+		else
+			ret = deq_append_back(ret, new_node(ft_atoi(datas[datas_cnt])));
+		datas_cnt++;
+	}
+	while (datas_cnt > -1)
+	{
+		free(datas[datas_cnt]);
+		datas_cnt++;
+	}
+	free(datas);
+	return (ret);
+}
 
+t_node	*push_str_ptr_to_deq(int ac, char **av)
+{
+	int		cnt;
+	t_node	*ret;
+
+	cnt = 1;
+	while (cnt < ac)
+	{
+		if (cnt == 1)
+			ret = new_node(ft_atoi(av[cnt]));
+		else
+			ret = deq_append_back(ret, new_node(ft_atoi(av[cnt])));
+	}
+	return (ret);
 }

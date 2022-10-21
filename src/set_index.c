@@ -6,16 +6,16 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:17:48 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/21 13:18:21 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/21 17:06:59 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	set_index(t_node *deq);
+t_node	*set_index(t_node *deq);
 void	bubble_sort_data(int *datas, int len);
 
-void	set_index(t_node *deq)
+t_node	*set_index(t_node *deq)
 {
 	int	len;
 	int	*datas;
@@ -36,6 +36,7 @@ void	set_index(t_node *deq)
 		deq_get_node_by_data(deq, datas[cnt])->index = cnt;
 		cnt++;
 	}
+	return (deq);
 }
 
 void	bubble_sort_data(int *datas, int len)

@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:17:36 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/21 13:17:38 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/21 17:07:48 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "../libft/libft.h"
 
 typedef struct s_node
 {
@@ -55,6 +56,6 @@ void	rra(t_node *deq[2]);
 void	rrb(t_node *deq[2]);
 void	rrr(t_node *deq[2]);
 
-void	set_index(t_node *deq);
+t_node	*set_index(t_node *deq);
 
 #endif
