@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:15:15 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/21 13:15:17 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/25 03:49:54 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ t_node	*deq_pop_tail(t_node *deq)
 		free(deq);
 		return (0);
 	}
+	tmp = deq;
 	while (tmp->back != 0)
 		tmp = tmp->back;
 	tmp->front->back = 0;

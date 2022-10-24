@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   malloc_null_guard.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 16:22:15 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/25 03:58:00 by rhong            ###   ########.fr       */
+/*   Created: 2022/10/25 03:55:43 by rhong             #+#    #+#             */
+/*   Updated: 2022/10/25 03:59:52 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_deqs	*sort(t_deqs *deqs);
-
-t_deqs	*sort(t_deqs *deqs)
+void	malloc_null_guard(void *ptr)
 {
-	//if (deq_len(deqs->deq_a) < 1)
-	//	deqs = hard_sort(deqs);
-	//else
-	deqs = many_sort(deqs);
-	return (deqs);
+	if (ptr == 0)
+	{
+		write_err("malloc null err\n");
+		exit(1);
+	}
 }

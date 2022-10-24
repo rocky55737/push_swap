@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:17:36 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/24 22:10:45 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/25 04:00:37 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 
 typedef struct s_node
 {
-	int		index;
-	int		data;
-	t_node	*front;
-	t_node	*back;
+	int				index;
+	int				data;
+	struct s_node	*front;
+	struct s_node	*back;
 }	t_node;
 
 typedef struct s_deqs
@@ -32,7 +32,11 @@ typedef struct s_deqs
 	t_node	*deq_b;
 }	t_deqs;
 
+void	push_swap(int ac, char **av);
+t_node	*push_data_to_deq(int ac, char **av);
+
 void	write_err(char	*err_msg);
+void	malloc_null_guard(void *ptr);
 
 int		input_err(int ac, char **av);
 
@@ -70,6 +74,9 @@ t_deqs	*rrr(t_deqs	*deqs);
 t_node	*set_index(t_node *deq);
 
 t_deqs	*sort(t_deqs *deqs);
+
 t_deqs	*sort_three(t_deqs	*deqs);
+
+t_deqs	*many_sort(t_deqs *deqs);
 
 #endif

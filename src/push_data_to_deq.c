@@ -6,11 +6,15 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:16:50 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/21 17:02:54 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/25 03:52:53 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_node	*push_data_to_deq(int ac, char **av);
+t_node	*push_string_to_deq(char *str);
+t_node	*push_str_ptr_to_deq(int ac, char **av);
 
 t_node	*push_data_to_deq(int ac, char **av)
 {
