@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:16:50 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/25 03:52:53 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/25 06:17:53 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ t_node	*push_str_ptr_to_deq(int ac, char **av)
 			ret = new_node(ft_atoi(av[cnt]));
 		else
 			ret = deq_append_back(ret, new_node(ft_atoi(av[cnt])));
+		cnt++;
 	}
 	return (ret);
 }
