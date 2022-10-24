@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:15:52 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/21 13:15:54 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/24 16:20:37 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_node	*deq_get_node_by_data(t_node *deq, int data)
 int	deq_get_max_data(t_node *deq)
 {
 	int	max;
-	
+
 	if (!deq)
 		return (0);
 	max = deq->data;
@@ -86,7 +86,7 @@ int	deq_get_max_data(t_node *deq)
 int	deq_get_min_data(t_node *deq)
 {
 	int	min;
-	
+
 	if (!deq)
 		return (0);
 	min = deq->data;

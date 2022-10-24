@@ -1,4 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 16:19:50 by rhong             #+#    #+#             */
+/*   Updated: 2022/10/24 16:36:11 by rhong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+
+t_deqs	*sort_three(t_deqs	*deqs);
+t_deqs	*sort_three_case_one(t_deqs	*deqs);
+t_deqs	*sort_three_case_two(t_deqs *deqs);
+t_deqs	*sort_three_case_three(t_deqs *deqs);
 
 t_deqs	*sort_three(t_deqs	*deqs)
 {

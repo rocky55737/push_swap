@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 13:17:24 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/24 16:28:11 by rhong            ###   ########.fr       */
+/*   Created: 2022/10/24 16:22:15 by rhong             #+#    #+#             */
+/*   Updated: 2022/10/24 20:39:13 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(int ac, char **av)
-{
-	t_deqs	*deqs;
+t_deqs	*sort(t_deqs *deqs);
 
-	if (input_err(ac, av))
-		exit(1);
-	deqs->deq_a = push_data_to_deq(ac, av);
-	deqs->deq_b = 0;
-	deqs->deq_a = set_index(deqs->deq_a);
-	deqs = sort(deqs);
-	exit(0);
+t_deqs	*sort(t_deqs *deqs)
+{
+	if (deq_len(deqs->deq_a) < 1)
+		deqs = hard_sort(deqs);
+	else
+		deqs = many_sort(deqs);
+	return (deqs);
 }
