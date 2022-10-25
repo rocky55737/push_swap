@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:17:48 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/21 17:06:59 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/25 09:02:34 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ void	bubble_sort_data(int *datas, int len);
 
 t_node	*set_index(t_node *deq)
 {
-	int	len;
-	int	*datas;
-	int	cnt;
+	int		len;
+	int		*datas;
+	int		cnt;
+	t_node	*tmp;
 
 	len = deq_len(deq);
 	datas = (int *)malloc(sizeof(int) * len);
@@ -30,12 +31,16 @@ t_node	*set_index(t_node *deq)
 		cnt++;
 	}
 	bubble_sort_data(datas, len);
-	cnt = 0;
-	while (cnt < len)
+	tmp = deq;
+	while (tmp)
 	{
-		deq_get_node_by_data(deq, datas[cnt])->index = cnt;
-		cnt++;
+		cnt = 0;
+		while (tmp->data != datas[cnt])
+			cnt++;
+		tmp->index = cnt;
+		tmp = tmp->back;
 	}
+	free(datas);
 	return (deq);
 }
 
@@ -59,5 +64,6 @@ void	bubble_sort_data(int *datas, int len)
 			}
 			ccnt++;
 		}
+		cnt++;
 	}
 }

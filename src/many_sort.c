@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:28:28 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/24 22:22:13 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/25 09:04:41 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ t_deqs	*many_sort(t_deqs *deqs)
 	int	total_len;
 
 	total_len = deq_len(deqs->deq_a);
+	ft_printf("%d\n", total_len);
 	while (deq_len(deqs->deq_a) != 3 + (total_len - 3) / 3)
 	{
 		if (deqs->deq_a->index > (total_len - 3) / 3 * 2 + 3)
@@ -29,10 +30,12 @@ t_deqs	*many_sort(t_deqs *deqs)
 		else
 			deqs = ra(deqs);
 	}
+	ft_printf("OK\n");
 	while (deq_len(deqs->deq_a) != 3)
 		deqs = pb(deqs);
 	deqs = sort_three(deqs);
 
+	ft_printf("OK\n");
 	while (deq_len(deqs->deq_b) != 0)
 	{
 		if (deqs->deq_b->data > deq_get_max_data(deqs->deq_a))
@@ -67,6 +70,7 @@ t_deqs	*many_sort(t_deqs *deqs)
 		}
 		deqs = pa(deqs);
 	}
+	ft_printf("OK\n");
 	while (deqs->deq_a->index != 0)
 	{
 		if (deqs->deq_a->index < total_len / 2)
@@ -74,5 +78,6 @@ t_deqs	*many_sort(t_deqs *deqs)
 		else
 			deqs = rra(deqs);
 	}
+	ft_printf("OK\n");
 	return (deqs);
 }

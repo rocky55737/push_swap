@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:15:52 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/24 16:20:37 by rhong            ###   ########.fr       */
+/*   Updated: 2022/10/25 08:47:49 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	deq_len(t_node *deq)
 
 	cnt = 0;
 	tmp = deq;
-	while (!tmp)
+	while (tmp)
 	{
 		cnt++;
 		tmp = tmp->back;
