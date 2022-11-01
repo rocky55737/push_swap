@@ -39,6 +39,11 @@ t_node	*deq_append_back(t_node *deq, t_node *new_node)
 {
 	t_node	*finder;
 
+	if (new_node == 0 && deq == 0)
+		return (0);
+	if (new_node == 0)
+		return (deq);
+	new_node->back = 0;
 	if (deq == 0)
 		return (new_node);
 	finder = deq;
@@ -51,6 +56,11 @@ t_node	*deq_append_back(t_node *deq, t_node *new_node)
 
 t_node	*deq_append_front(t_node *deq, t_node *new_node)
 {
+	if (new_node == 0 && deq == 0)
+		return (0);
+	if (new_node == 0)
+		return (deq);
+	new_node->front = 0;
 	if (deq == 0)
 		return (new_node);
 	new_node->back = deq;

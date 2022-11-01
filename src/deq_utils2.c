@@ -15,7 +15,22 @@
 t_node	*head_move_to_tail(t_node *deq);
 t_node	*tail_move_to_head(t_node *deq);
 t_node	*swap_head_neck(t_node *deq);
-t_node	*head_dup_to_other_head(t_node *deq_s, t_node *deq_d);
+t_node	*dup_node(t_node *t_node);
+
+t_node	*dup_node(t_node *src_node)
+{
+	t_node	*duped_node;
+
+	if (!src_node)
+		return (0);
+	duped_node = (t_node *)malloc(sizeof(t_node));
+	malloc_null_guard(duped_node);
+	duped_node->front = src_node->front;
+	duped_node->data = src_node->data;
+	duped_node->index = src_node->index;
+	duped_node->back = src_node->back;
+	return (duped_node);
+}
 
 t_node	*head_move_to_tail(t_node *deq)
 {
@@ -24,7 +39,7 @@ t_node	*head_move_to_tail(t_node *deq)
 	if (deq == 0)
 		return (0);
 	tmp = deq;
-	deq = deq_append_back(deq, new_node(tmp->data));
+	deq = deq_append_back(deq, dup_node(tmp));
 	deq = deq_pop_head(deq);
 	return (deq);
 }
@@ -55,15 +70,4 @@ t_node	*swap_head_neck(t_node *deq)
 	deq->front = tmp;
 	tmp->front = 0;
 	return (tmp);
-}
-
-t_node	*head_dup_to_other_head(t_node *deq_s, t_node *deq_d)
-{
-	t_node	*tmp;
-
-	if (deq_s == 0)
-		return (deq_d);
-	tmp = new_node(deq_s->data);
-	deq_append_front(deq_d, tmp);
-	return (deq_d);
 }

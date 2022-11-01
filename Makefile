@@ -35,7 +35,7 @@ endif
 all : $(NAME)
 
 $(NAME): $(TOTAL_OBJS) $(LIB)
-	$(CC) $(LFLAG) $(LIB) $(TOTAL_OBJS) -o $(NAME)
+	$(CC) -I./ft_printf -I./libft -I./src $(LFLAG) $(LIB) $(TOTAL_OBJS) -o $(NAME)
 
 ./obj/%.o : %.c
 	$(CC) $(CFLAGS) -c $<

@@ -46,10 +46,10 @@ t_node	*deq_append_front(t_node *deq, t_node *new_node);
 t_node	*deq_pop_head(t_node *deq);
 t_node	*deq_pop_tail(t_node *deq);
 
+t_node	*dup_node(t_node *t_node);
 t_node	*head_move_to_tail(t_node *deq);
 t_node	*tail_move_to_head(t_node *deq);
 t_node	*swap_head_neck(t_node *deq);
-t_node	*head_dup_to_other_head(t_node *deq_s, t_node *deq_d);
 
 int		deq_len(t_node *deq);
 int		deq_get_data_by_index(t_node *deq, int index);
