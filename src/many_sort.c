@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:28:28 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/02 17:42:05 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/02 17:53:45 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,32 +24,12 @@ void	print_deq(t_deqs *deqs)
 		tmp = tmp->back;
 	}
 	ft_printf("\n");
-	ft_printf("deq_a: ");
-	tmp = deqs->deq_a;
-	while (tmp->back)
-		tmp = tmp->back;
-	while (tmp)
-	{
-		ft_printf("%d ", tmp->data);
-		tmp = tmp->front;
-	}
-	ft_printf("\n");
 	ft_printf("deq_b: ");
 	tmp = deqs->deq_b;
 	while (tmp)
 	{
 		ft_printf("%d ", tmp->data);
 		tmp = tmp->back;
-	}
-	ft_printf("\n");
-	ft_printf("deq_b: ");
-	tmp = deqs->deq_b;
-	while (tmp->back)
-		tmp = tmp->back;
-	while (tmp)
-	{
-		ft_printf("%d ", tmp->data);
-		tmp = tmp->front;
 	}
 	ft_printf("\n");
 }
@@ -78,10 +58,8 @@ t_deqs	*many_sort(t_deqs *deqs)
 	
 	while (deq_len(deqs->deq_a) != 3)
 		deqs = pb(deqs);
-	print_deq(deqs);
 
 	deqs = sort_three(deqs);
-	print_deq(deqs);
 
 	while (deq_len(deqs->deq_b) != 0)
 	{

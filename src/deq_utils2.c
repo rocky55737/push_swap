@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:15:23 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/02 17:15:22 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/02 17:52:11 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ t_node	*swap_head_neck(t_node *deq)
 	if (deq == 0 || deq->back == 0)
 		return (deq);
 	tmp = deq->back;
+	if (tmp->back)
+		tmp->back->front = deq;
 	deq->back = tmp->back;
 	tmp->back = deq;
 	deq->front = tmp;

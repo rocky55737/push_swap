@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:17:36 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/02 16:10:38 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/02 18:03:30 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ t_deqs	*rrr(t_deqs	*deqs);
 t_node	*set_index(t_node *deq);
 
 t_deqs	*sort(t_deqs *deqs);
+int		is_sorted(t_deqs *deqs, int total_len);
 
 t_deqs	*sort_three(t_deqs	*deqs);
 
