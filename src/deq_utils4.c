@@ -6,14 +6,14 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:01:18 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/02 15:22:05 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/02 16:11:48 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 int	deq_get_index_big(t_node *deq, int index);
-int	deq_get_index_small(t_node *deq, int index);
+int	deq_get_index_min(t_node *deq);
 
 int	deq_get_index_big(t_node *deq, int index)
 {
@@ -43,27 +43,18 @@ int	deq_get_index_big(t_node *deq, int index)
 	return (ret);
 }
 
-int	deq_get_index_small(t_node *deq, int index)
+int	deq_get_index_min(t_node *deq)
 {
 	int		ret;
-	int		smaller_index;
+	int		min_index;
 	t_node	*tmp;
 
 	if (!deq)
 		return (-1);
 	ret = 0;
-	smaller_index = -1;
+	min_index = deq_get_node_by_data(deq, deq_get_min_data(deq))->index;
 	tmp = deq;
-	while (tmp)
-	{
-		if (tmp->index < index && smaller_index < tmp->index)
-		{
-			smaller_index = tmp->index;
-		}
-		tmp = tmp->back;
-	}
-	tmp = deq;
-	while (tmp->index != smaller_index)
+	while (tmp->index != min_index)
 	{
 		ret++;
 		tmp = tmp->back;

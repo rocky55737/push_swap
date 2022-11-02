@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:28:28 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/02 15:27:23 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/02 16:44:59 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,55 +55,64 @@ t_deqs	*many_sort(t_deqs *deqs)
 			deqs = ra(deqs);
 		}
 	}
+	
 	while (deq_len(deqs->deq_a) != 3)
 		deqs = pb(deqs);
+
 	deqs = sort_three(deqs);
 
-	print_deq(deqs);
 	while (deq_len(deqs->deq_b) != 0)
 	{
 		if (deqs->deq_b->data > deq_get_max_data(deqs->deq_a))
 		{
-			ft_printf("1OK\n");
-			while (deq_get_index_small(deqs->deq_a, deqs->deq_b->index) != 0)
+			while (deq_get_index_min(deqs->deq_a) != 0)
 			{
-				ft_printf("1OK\n");
-				if (deq_len(deqs->deq_a) / 2 > deq_get_index_small(deqs->deq_a, deqs->deq_b->index))
+				if (deq_len(deqs->deq_a) / 2 > deq_get_index_min(deqs->deq_a))
 				{
-					ft_printf("raOK\n");
+					ft_printf("ra\n");
 					deqs = ra(deqs);
 				}
 				else
 				{
-					ft_printf("rraOK\n");
+					ft_printf("rra\n");
 					deqs = rra(deqs);
 				}
-				print_deq(deqs);
-			}	
+			}
 		}
 		else
 		{
-			ft_printf("2OK\n");
 			while (deq_get_index_big(deqs->deq_a, deqs->deq_b->index) != 0)
 			{
 				print_deq(deqs);
 				if (deq_len(deqs->deq_a) / 2 > deq_get_index_big(deqs->deq_a, deqs->deq_b->index))
+				{
+					ft_printf("ra\n");
 					deqs = ra(deqs);
+				}
 				else
+				{
+					ft_printf("rra\n");
 					deqs = rra(deqs);
+					print_deq(deqs);
+				}
 			}
 		}
+		print_deq(deqs);
+		ft_printf("pa\n");
 		deqs = pa(deqs);
 		print_deq(deqs);
 	}
-	ft_printf("OK\n");
+
 	while (deqs->deq_a->index != 0)
 	{
 		if (deqs->deq_a->index < total_len / 2)
-			deqs = ra(deqs);
-		else
+		{
 			deqs = rra(deqs);
+		}
+		else
+		{
+			deqs = ra(deqs);
+		}
 	}
-	ft_printf("OK\n");
 	return (deqs);
 }

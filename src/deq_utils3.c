@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:15:52 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/02 15:12:03 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/02 16:13:55 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_node	*deq_get_node_by_data(t_node *deq, int data)
 	t_node	*tmp;
 
 	tmp = deq;
-	while (!tmp)
+	while (tmp)
 	{
 		if (tmp->data == data)
 			return (tmp);
