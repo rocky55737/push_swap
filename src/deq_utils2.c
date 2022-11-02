@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:15:23 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/21 13:15:39 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/02 15:51:30 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,22 @@ t_node	*head_move_to_tail(t_node *deq)
 	if (deq == 0)
 		return (0);
 	tmp = deq;
-	deq = deq_append_back(deq, dup_node(tmp));
+	deq = deq_append_back(deq, tmp);
 	deq = deq_pop_head(deq);
 	return (deq);
 }
 
 t_node	*tail_move_to_head(t_node *deq)
 {
-	t_node	*tmp;
+	t_node	*finder;
 
 	if (deq == 0)
 		return (0);
-	tmp = deq;
-	while (tmp->back != 0)
-		tmp = tmp->back;
-	deq_append_front(deq, new_node(tmp->data));
-	deq_pop_tail(deq);
+	finder = deq;
+	while (finder->back != 0)
+		finder = finder->back;
+	deq = deq_append_front(deq, finder);
+	deq = deq_pop_tail(deq);
 	return (deq);
 }
 

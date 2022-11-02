@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:15:15 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/25 03:49:54 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/02 15:40:50 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,34 +38,41 @@ t_node	*new_node(int data)
 t_node	*deq_append_back(t_node *deq, t_node *new_node)
 {
 	t_node	*finder;
+	t_node	*tmp;
 
 	if (new_node == 0 && deq == 0)
 		return (0);
 	if (new_node == 0)
 		return (deq);
-	new_node->back = 0;
+	tmp = dup_node(new_node);
+	tmp->front = 0;
+	tmp->back = 0;
 	if (deq == 0)
-		return (new_node);
+		return (tmp);
 	finder = deq;
 	while (finder->back != 0)
 		finder = finder->back;
-	finder->back = new_node;
-	new_node->front = finder;
+	finder->back = tmp;
+	tmp->front = finder;
 	return (deq);
 }
 
 t_node	*deq_append_front(t_node *deq, t_node *new_node)
 {
+	t_node	*tmp;
+
 	if (new_node == 0 && deq == 0)
 		return (0);
 	if (new_node == 0)
 		return (deq);
-	new_node->front = 0;
+	tmp = dup_node(new_node);
+	tmp->front = 0;
+	tmp->back = 0;
 	if (deq == 0)
-		return (new_node);
-	new_node->back = deq;
-	deq->front = new_node;
-	return (new_node);
+		return (tmp);
+	tmp->back = deq;
+	deq->front = tmp;
+	return (tmp);
 }
 
 t_node	*deq_pop_head(t_node *deq)

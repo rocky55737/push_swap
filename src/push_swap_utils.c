@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:16:56 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/25 08:31:11 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/02 13:10:59 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_deqs	*pa(t_deqs	*deqs)
 	if (deqs->deq_b)
 	{
 		deqs->deq_a = deq_append_front(deqs->deq_a, deqs->deq_b);
-		deq_pop_head(deqs->deq_b);
+		deqs->deq_b = deq_pop_head(deqs->deq_b);
 		//ft_printf("pa\n");
 	}
 	return (deqs);
@@ -56,7 +56,7 @@ t_deqs	*pb(t_deqs	*deqs)
 	if (deqs->deq_a)
 	{
 		deqs->deq_b = deq_append_front(deqs->deq_b, deqs->deq_a);
-		deq_pop_head(deqs->deq_a);
+		deqs->deq_a = deq_pop_head(deqs->deq_a);
 		//ft_printf("pb\n");
 	}
 	return (deqs);

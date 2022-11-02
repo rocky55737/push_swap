@@ -6,7 +6,7 @@
 #    By: rhong <rhong@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 22:23:30 by rhong             #+#    #+#              #
-#    Updated: 2022/10/25 04:01:21 by rhong            ###   ########.fr        #
+#    Updated: 2022/11/02 12:56:58 by rhong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ endif
 all : $(NAME)
 
 $(NAME): $(TOTAL_OBJS) $(LIB)
-	$(CC) -I./ft_printf -I./libft -I./src $(LFLAG) $(LIB) $(TOTAL_OBJS) -o $(NAME)
+	$(CC) $(LFLAG) $(LIB) $(TOTAL_OBJS) -o $(NAME)
 
 ./obj/%.o : %.c
 	$(CC) $(CFLAGS) -c $<
