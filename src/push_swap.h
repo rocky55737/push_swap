@@ -78,7 +78,24 @@ t_deqs	*sort(t_deqs *deqs);
 int		is_sorted(t_deqs *deqs, int total_len);
 
 t_deqs	*sort_three(t_deqs	*deqs);
+t_deqs	*sort_three_case_one(t_deqs	*deqs);
+t_deqs	*sort_three_case_two(t_deqs *deqs);
+t_deqs	*sort_three_case_three(t_deqs *deqs);
+
+t_deqs	*sort_four(t_deqs *deqs);
+t_deqs	*sort_four_case_one(t_deqs *deqs);
+t_deqs	*sort_four_case_two(t_deqs *deqs);
+t_deqs	*sort_four_case_three(t_deqs *deqs);
+t_deqs	*sort_four_case_four(t_deqs *deqs);
+
+t_deqs	*sort_five(t_deqs *deqs);
+t_deqs	*sort_five_case_one(t_deqs *deqs);
+t_deqs	*sort_five_case_two(t_deqs *deqs);
+t_deqs	*sort_five_case_three(t_deqs *deqs);
+t_deqs	*sort_five_case_four(t_deqs *deqs);
+t_deqs	*sort_five_case_five(t_deqs *deqs);
 
 t_deqs	*many_sort(t_deqs *deqs);
+t_deqs	*hard_sort(t_deqs *deqs);
 
 #endif

@@ -19,9 +19,9 @@ t_deqs	*sort_three_case_three(t_deqs *deqs);
 
 t_deqs	*sort_three(t_deqs	*deqs)
 {
-	if (deqs->deq_a->data == deq_get_min_data(deqs->deq_a))
+	if (deq_get_index_min(deqs->deq_a) == 0)
 		deqs = sort_three_case_one(deqs);
-	else if (deqs->deq_a->back->data == deq_get_min_data(deqs->deq_a))
+	else if (deq_get_index_min(deqs->deq_a) == 1)
 		deqs = sort_three_case_two(deqs);
 	else
 		deqs = sort_three_case_three(deqs);

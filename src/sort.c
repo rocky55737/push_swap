@@ -17,10 +17,13 @@ int		is_sorted(t_deqs *deqs, int total_len);
 
 t_deqs	*sort(t_deqs *deqs)
 {
-	//if (deq_len(deqs->deq_a) < 1)
-	//	deqs = hard_sort(deqs);
-	//else
-	deqs = many_sort(deqs);
+	if (!is_sorted(deqs, deq_len(deqs->deq_a)))
+	{
+		if (deq_len(deqs->deq_a) < 6)
+			deqs = hard_sort(deqs);
+		else
+			deqs = many_sort(deqs);
+	}
 	return (deqs);
 }
 
