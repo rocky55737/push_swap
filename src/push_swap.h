@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:17:36 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/02 18:03:30 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/04 19:43:27 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int		deq_get_min_data(t_node *deq);
 
 int		deq_get_index_big(t_node *deq, int index);
 int		deq_get_index_min(t_node *deq);
+t_node	*deq_get_last_node(t_node *deq);
 
 t_deqs	*sa(t_deqs	*deqs);
 t_deqs	*sb(t_deqs	*deqs);
@@ -71,6 +72,8 @@ t_deqs	*rr(t_deqs	*deqs);
 t_deqs	*rra(t_deqs	*deqs);
 t_deqs	*rrb(t_deqs	*deqs);
 t_deqs	*rrr(t_deqs	*deqs);
+
+void	free_char_ptr_arr(char **char_ptr_arr);
 
 t_node	*set_index(t_node *deq);
 

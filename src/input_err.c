@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:16:19 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/04 18:16:25 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/04 19:16:52 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,25 +44,30 @@ int	input_err(int ac, char **av)
 
 int	string_input_err(char *input)
 {
-	int	cnt;
+	int		ret;
+	int		cnt;
+	char	**splited_input;
+	char	**parsed_input;
 
 	cnt = 0;
 	if (!input[cnt])
 		return (1);
-	if (input[cnt] >= '0' && input[cnt] <= '9')
+	splited_input = ft_split(input, ' ');
+	while (splited_input[cnt])
+		cnt++;
+	parsed_input = (char **)malloc(sizeof(char *) * (cnt + 2));
+	parsed_input[0] = 0;
+	cnt = 0;
+	while (splited_input[cnt])
 	{
-		while (input[cnt] && \
-		((input[cnt] >= '0' && input[cnt] <= '9') || input[cnt] == ' '))
-		{
-			if (input[cnt] == ' ' && (size_t)(cnt + 1) < ft_strlen(input) && \
-			input[cnt + 1] == ' ')
-				return (1);
-			cnt++;
-		}
-		if (input[cnt] == 0 && (input[cnt - 1] >= '0' && input[cnt - 1] <= '9'))
-			return (0);
+		parsed_input[cnt + 1] = splited_input[cnt];
+		cnt++;
 	}
-	return (1);
+	parsed_input[cnt + 1] = 0;
+	ret = str_ptr_input_err(cnt + 1, parsed_input);
+	free_char_ptr_arr(splited_input);
+	free(parsed_input);
+	return (ret);
 }
 
 int	str_ptr_input_err(int input_num, char **input)
@@ -76,6 +81,8 @@ int	str_ptr_input_err(int input_num, char **input)
 	while (input_cnt < input_num)
 	{
 		str_cnt = 0;
+		if (input[input_cnt][str_cnt] && input[input_cnt][str_cnt] == '-')
+			str_cnt++;
 		while (input[input_cnt][str_cnt])
 		{
 			if (input[input_cnt][str_cnt] < '0' \

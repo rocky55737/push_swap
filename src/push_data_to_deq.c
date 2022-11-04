@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:16:50 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/04 18:19:41 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/04 19:15:24 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,7 @@ t_node	*push_string_to_deq(char *str)
 			ret = deq_append_back(ret, new_node(ft_atoi(datas[datas_cnt])));
 		datas_cnt++;
 	}
-	datas_cnt = 0;
-	while (datas[datas_cnt])
-	{
-		free(datas[datas_cnt]);
-		datas_cnt++;
-	}
-	free(datas);
+	free_char_ptr_arr(datas);
 	return (ret);
 }
 

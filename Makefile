@@ -6,7 +6,7 @@
 #    By: rhong <rhong@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 22:23:30 by rhong             #+#    #+#              #
-#    Updated: 2022/11/02 12:56:58 by rhong            ###   ########.fr        #
+#    Updated: 2022/11/04 19:14:39 by rhong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 NAME = push_swap
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ./src/deq_utils.c ./src/deq_utils2.c ./src/deq_utils3.c ./src/deq_utils4.c ./src/hard_sort.c ./src/input_err.c ./src/main.c ./src/malloc_null_guard.c ./src/many_sort.c ./src/push_data_to_deq.c ./src/push_swap_utils.c ./src/push_swap_utils2.c ./src/push_swap_utils3.c ./src/push_swap.c ./src/set_index.c ./src/sort_five.c ./src/sort_five2.c ./src/sort_four.c ./src/sort_three.c ./src/sort.c ./src/write_err.c
+SRCS = ./src/deq_utils.c ./src/deq_utils2.c ./src/deq_utils3.c ./src/deq_utils4.c ./src/free_char_ptr_arr.c ./src/hard_sort.c ./src/input_err.c ./src/main.c ./src/malloc_null_guard.c ./src/many_sort.c ./src/push_data_to_deq.c ./src/push_swap_utils.c ./src/push_swap_utils2.c ./src/push_swap_utils3.c ./src/push_swap.c ./src/set_index.c ./src/sort_five.c ./src/sort_five2.c ./src/sort_four.c ./src/sort_three.c ./src/sort.c ./src/write_err.c
 SRCS_B = 
 
 HEADER = ./src/push_swap.h

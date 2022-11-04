@@ -6,14 +6,15 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:01:18 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/02 16:11:48 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/04 19:43:38 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	deq_get_index_big(t_node *deq, int index);
-int	deq_get_index_min(t_node *deq);
+int		deq_get_index_big(t_node *deq, int index);
+int		deq_get_index_min(t_node *deq);
+t_node	*deq_get_last_node(t_node *deq);
 
 int	deq_get_index_big(t_node *deq, int index)
 {
@@ -60,4 +61,16 @@ int	deq_get_index_min(t_node *deq)
 		tmp = tmp->back;
 	}
 	return (ret);
+}
+
+t_node	*deq_get_last_node(t_node *deq)
+{
+	t_node	*tmp;
+
+	if (!deq)
+		return (0);
+	tmp = deq;
+	while (tmp->back)
+		tmp = tmp->back;
+	return (tmp);
 }
