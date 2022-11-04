@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:16:19 by rhong             #+#    #+#             */
-/*   Updated: 2022/10/25 03:51:28 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/04 18:16:25 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,21 @@ int	input_err(int ac, char **av)
 		write_err("push swap: more argument is required\n");
 		return (1);
 	}
-	else if (ac == 2 && string_input_err(av[1]))
+	else if (ac == 2)
 	{
-		write_err("push swap: input err\n");
-		return (1);
+		if (string_input_err(av[1]))
+		{
+			write_err("push swap: string input err\n");
+			return (1);
+		}
 	}
-	else if (str_ptr_input_err(ac, av))
+	else
 	{
-		write_err("push swap: input err\n");
-		return (1);
+		if (str_ptr_input_err(ac, av))
+		{
+			write_err("push swap: input err\n");
+			return (1);
+		}
 	}
 	return (0);
 }
