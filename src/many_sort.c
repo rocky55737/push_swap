@@ -6,33 +6,11 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:28:28 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/02 17:53:45 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/04 18:02:31 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_deq(t_deqs *deqs)
-{
-	t_node	*tmp;
-
-	ft_printf("deq_a: ");
-	tmp = deqs->deq_a;
-	while (tmp)
-	{
-		ft_printf("%d ", tmp->data);
-		tmp = tmp->back;
-	}
-	ft_printf("\n");
-	ft_printf("deq_b: ");
-	tmp = deqs->deq_b;
-	while (tmp)
-	{
-		ft_printf("%d ", tmp->data);
-		tmp = tmp->back;
-	}
-	ft_printf("\n");
-}
 
 t_deqs	*many_sort(t_deqs *deqs)
 {
@@ -105,6 +83,5 @@ t_deqs	*many_sort(t_deqs *deqs)
 			deqs = ra(deqs);
 		}
 	}
-	print_deq(deqs);
 	return (deqs);
 }

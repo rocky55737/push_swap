@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:22:15 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/02 18:03:16 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/04 18:06:18 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		is_sorted(t_deqs *deqs, int total_len);
 
 t_deqs	*sort(t_deqs *deqs)
 {
-	if (!is_sorted(deqs, deq_len(deqs->deq_a)))
+	if (!is_sorted(deqs, deq_len(deqs->deq_a)) && deq_len(deqs->deq_a) != 1)
 	{
 		if (deq_len(deqs->deq_a) < 6)
 			deqs = hard_sort(deqs);
@@ -39,7 +39,7 @@ int	is_sorted(t_deqs *deqs, int total_len)
 		tmp = tmp->back;
 		index++;
 	}
-	if (total_len != deqs)
+	if (total_len != index)
 	{
 		return (0);
 	}
