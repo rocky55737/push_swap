@@ -15,6 +15,8 @@
 t_deqs	*many_sort(t_deqs *deqs);
 t_deqs	*initialize_many_sort(t_deqs *deqs, int total_len);
 t_deqs	*end_many_sort(t_deqs *deqs, int total_len);
+t_deqs	*sort_first(t_deqs *deqs);
+t_deqs	*sort_last(t_deqs *deqs);
 
 t_deqs	*many_sort(t_deqs *deqs)
 {
@@ -25,26 +27,10 @@ t_deqs	*many_sort(t_deqs *deqs)
 
 	while (deq_len(deqs->deq_b) != 0)
 	{
-		if (deqs->deq_b->data > deq_get_max_data(deqs->deq_a))
-		{
-			while (deq_get_index_min(deqs->deq_a) != 0)
-			{
-				if (deq_len(deqs->deq_a) / 2 > deq_get_index_min(deqs->deq_a))
-					deqs = ra(deqs);
-				else
-					deqs = rra(deqs);
-			}
-		}
+		if (first_is_small_move(deqs))
+			deqs = sort_first(deqs);
 		else
-		{
-			while (deq_get_index_big(deqs->deq_a, deqs->deq_b->index) != 0)
-			{
-				if (deq_len(deqs->deq_a) / 2 > deq_get_index_big(deqs->deq_a, deqs->deq_b->index))
-					deqs = ra(deqs);
-				else
-					deqs = rra(deqs);
-			}
-		}
+			deqs = sort_last(deqs);
 		deqs = pa(deqs);
 	}
 
@@ -81,5 +67,37 @@ t_deqs	*end_many_sort(t_deqs *deqs, int total_len)
 		else
 			deqs = ra(deqs);
 	}
+	return (deqs);
+}
+
+t_deqs	*sort_first(t_deqs *deqs)
+{
+	if (deqs->deq_b->data > deq_get_max_data(deqs->deq_a))
+	{
+		while (deq_get_index_min(deqs->deq_a) != 0)
+		{
+			if (deq_len(deqs->deq_a) / 2 > deq_get_index_min(deqs->deq_a))
+				deqs = ra(deqs);
+			else
+				deqs = rra(deqs);
+		}
+	}
+	else
+	{
+		while (deq_get_index_big(deqs->deq_a, deqs->deq_b->index) != 0)
+		{
+			if (deq_len(deqs->deq_a) / 2 > deq_get_index_big(deqs->deq_a, deqs->deq_b->index))
+				deqs = ra(deqs);
+			else
+				deqs = rra(deqs);
+		}
+	}
+	return (deqs);
+}
+
+t_deqs	*sort_last(t_deqs *deqs)
+{
+	deqs = rrb(deqs);
+	deqs = sort_first(deqs);
 	return (deqs);
 }

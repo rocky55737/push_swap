@@ -73,6 +73,10 @@ t_deqs	*rra(t_deqs	*deqs);
 t_deqs	*rrb(t_deqs	*deqs);
 t_deqs	*rrr(t_deqs	*deqs);
 
+int		find_move_cnt(t_deqs *deqs);
+
+int		first_is_small_move(t_deqs *deqs);
+
 void	free_char_ptr_arr(char **char_ptr_arr);
 
 t_node	*set_index(t_node *deq);
@@ -99,6 +103,9 @@ t_deqs	*sort_five_case_four(t_deqs *deqs);
 t_deqs	*sort_five_case_five(t_deqs *deqs);
 
 t_deqs	*many_sort(t_deqs *deqs);
+t_deqs	*sort_first(t_deqs *deqs);
+t_deqs	*sort_last(t_deqs *deqs);
+
 t_deqs	*hard_sort(t_deqs *deqs);
 
 #endif
