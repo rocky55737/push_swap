@@ -21,14 +21,12 @@ t_deqs	*pb(t_deqs	*deqs);
 t_deqs	*sa(t_deqs	*deqs)
 {
 	deqs->deq_a = swap_head_neck(deqs->deq_a);
-	ft_printf("sa\n");
 	return (deqs);
 }
 
 t_deqs	*sb(t_deqs	*deqs)
 {
 	deqs->deq_b = swap_head_neck(deqs->deq_b);
-	ft_printf("sb\n");
 	return (deqs);
 }
 
@@ -36,7 +34,6 @@ t_deqs	*ss(t_deqs	*deqs)
 {
 	deqs->deq_a = swap_head_neck(deqs->deq_a);
 	deqs->deq_b = swap_head_neck(deqs->deq_b);
-	ft_printf("ss\n");
 	return (deqs);
 }
 
@@ -46,7 +43,6 @@ t_deqs	*pa(t_deqs	*deqs)
 	{
 		deqs->deq_a = deq_append_front(deqs->deq_a, deqs->deq_b);
 		deqs->deq_b = deq_pop_head(deqs->deq_b);
-		ft_printf("pa\n");
 	}
 	return (deqs);
 }
@@ -57,7 +53,6 @@ t_deqs	*pb(t_deqs	*deqs)
 	{
 		deqs->deq_b = deq_append_front(deqs->deq_b, deqs->deq_a);
 		deqs->deq_a = deq_pop_head(deqs->deq_a);
-		ft_printf("pb\n");
 	}
 	return (deqs);
 }

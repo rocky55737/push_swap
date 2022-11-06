@@ -34,7 +34,7 @@ void	sort(t_deqs *deqs)
 	buffer = get_next_line(0);
 	while (buffer)
 	{
-		execute_command(buffer);
+		deqs = execute_command(deqs, buffer);
 		free(buffer);
 		buffer = get_next_line(0);
 	}
