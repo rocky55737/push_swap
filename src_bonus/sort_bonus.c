@@ -18,12 +18,32 @@ int		is_sorted(t_deqs *deqs, int total_len);
 void	sort(t_deqs *deqs)
 {
 	char	*buffer;
-
-	if (is_sorted(deqs, deq_len(deqs->deq_a)))
+	int		total_len;
+	
+	total_len = deq_len(deqs->deq_a);
+	if (is_sorted(deqs, total_len))
 	{
-		buffer = 
-		if ()
+		buffer = get_next_line(0);
+		if (!buffer)
+			write(1, "OK\n", 3);
+		else
+			write(1, "KO\n", 3);
+		free(buffer);
+		exit(0);
 	}
+	buffer = get_next_line(0);
+	while (buffer)
+	{
+		execute_command(buffer);
+		free(buffer);
+		buffer = get_next_line(0);
+	}
+	free(buffer);
+	if (is_sorted(deqs, total_len))
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
+	exit(0);
 }
 
 int	is_sorted(t_deqs *deqs, int total_len)
