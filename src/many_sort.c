@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:28:28 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/07 19:53:11 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/08 06:02:55 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,6 @@ t_deqs	*initialize_many_sort(t_deqs *deqs, int total_len);
 t_deqs	*end_many_sort(t_deqs *deqs, int total_len);
 t_deqs	*sort_first(t_deqs *deqs);
 t_deqs	*sort_last(t_deqs *deqs);
-void	print_deq(t_deqs *deqs);
-
-void	print_deq(t_deqs *deqs)
-{
-	t_node	*tmp;
-
-	ft_printf("deq_a :");
-	tmp = deqs->deq_a;
-	while (tmp)
-	{
-		ft_printf("%d ", tmp->data);
-		tmp = tmp->back;
-	}
-	ft_printf("\n");
-	ft_printf("deq_b :");
-	tmp = deqs->deq_b;
-	while (tmp)
-	{
-		ft_printf("%d ", tmp->data);
-		tmp = tmp->back;
-	}
-	ft_printf("\n");
-}
 
 t_deqs	*many_sort(t_deqs *deqs)
 {
@@ -61,21 +38,22 @@ t_deqs	*many_sort(t_deqs *deqs)
 
 t_deqs	*initialize_many_sort(t_deqs *deqs, int total_len)
 {
-	while (deq_len(deqs->deq_a) != 3 + (total_len - 3) / 3)
+	while (deq_len(deqs->deq_a) != 5 + (total_len - 5) / 3)
 	{
-		if (deqs->deq_a->index > (total_len - 3) / 3 * 2 + 2)
+		if (deqs->deq_a->index > (total_len - 5) / 3 * 2 + 4)
 		{
 			deqs = pb(deqs);
-			deqs = rb(deqs);
+			if (deq_len(deqs->deq_b) != 1)
+				deqs = rb(deqs);
 		}
-		else if (deqs->deq_a->index > (total_len - 3) / 3 + 2)
+		else if (deqs->deq_a->index > (total_len - 5) / 3 + 4)
 			deqs = pb(deqs);
 		else
 			deqs = ra(deqs);
 	}
-	while (deq_len(deqs->deq_a) != 3)
+	while (deq_len(deqs->deq_a) != 5)
 		deqs = pb(deqs);
-	deqs = sort_three(deqs);
+	deqs = sort_five(deqs);
 	return (deqs);
 }
 
@@ -107,7 +85,8 @@ t_deqs	*sort_first(t_deqs *deqs)
 	{
 		while (deq_get_index_big(deqs->deq_a, deqs->deq_b->index) != 0)
 		{
-			if (deq_len(deqs->deq_a) / 2 > deq_get_index_big(deqs->deq_a, deqs->deq_b->index))
+			if (deq_len(deqs->deq_a) / 2 > \
+			deq_get_index_big(deqs->deq_a, deqs->deq_b->index))
 				deqs = ra(deqs);
 			else
 				deqs = rra(deqs);

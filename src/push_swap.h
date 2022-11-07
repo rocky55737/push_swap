@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:17:36 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/07 17:14:04 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/08 05:06:48 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,5 @@ t_deqs	*sort_first(t_deqs *deqs);
 t_deqs	*sort_last(t_deqs *deqs);
 
 t_deqs	*hard_sort(t_deqs *deqs);
-
-void	print_deq(t_deqs *deqs);
 
 #endif
