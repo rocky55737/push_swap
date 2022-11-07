@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   execute_command_bonus.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/07 16:11:06 by rhong             #+#    #+#             */
+/*   Updated: 2022/11/07 16:16:54 by rhong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h"
 
 t_deqs	*execute_command(t_deqs *deqs, char *command);
 t_deqs	*do_execute(t_deqs *deqs, char *command);
+int		is_command(char *str);
 
 t_deqs	*execute_command(t_deqs *deqs, char *command)
 {
@@ -39,4 +52,31 @@ t_deqs	*do_execute(t_deqs *deqs, char *command)
 	else if (ft_strcmp(command, "rrr") == 0)
 		deqs = pb(deqs);
 	return (deqs);
+}
+
+int	is_command(char *str)
+{
+	if (ft_strcmp(str, "sa") == 0)
+		return (1);
+	else if (ft_strcmp(str, "ra") == 0)
+		return (1);
+	else if (ft_strcmp(str, "rra") == 0)
+		return (1);
+	else if (ft_strcmp(str, "sb") == 0)
+		return (1);
+	else if (ft_strcmp(str, "rb") == 0)
+		return (1);
+	else if (ft_strcmp(str, "rrb") == 0)
+		return (1);
+	else if (ft_strcmp(str, "ss") == 0)
+		return (1);
+	else if (ft_strcmp(str, "rr") == 0)
+		return (1);
+	else if (ft_strcmp(str, "rrr") == 0)
+		return (1);
+	else if (ft_strcmp(str, "rrr") == 0)
+		return (1);
+	else if (ft_strcmp(str, "rrr") == 0)
+		return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:28:28 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/04 19:53:41 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/07 19:53:11 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,29 @@ t_deqs	*initialize_many_sort(t_deqs *deqs, int total_len);
 t_deqs	*end_many_sort(t_deqs *deqs, int total_len);
 t_deqs	*sort_first(t_deqs *deqs);
 t_deqs	*sort_last(t_deqs *deqs);
+void	print_deq(t_deqs *deqs);
+
+void	print_deq(t_deqs *deqs)
+{
+	t_node	*tmp;
+
+	ft_printf("deq_a :");
+	tmp = deqs->deq_a;
+	while (tmp)
+	{
+		ft_printf("%d ", tmp->data);
+		tmp = tmp->back;
+	}
+	ft_printf("\n");
+	ft_printf("deq_b :");
+	tmp = deqs->deq_b;
+	while (tmp)
+	{
+		ft_printf("%d ", tmp->data);
+		tmp = tmp->back;
+	}
+	ft_printf("\n");
+}
 
 t_deqs	*many_sort(t_deqs *deqs)
 {
@@ -24,7 +47,6 @@ t_deqs	*many_sort(t_deqs *deqs)
 
 	total_len = deq_len(deqs->deq_a);
 	deqs = initialize_many_sort(deqs, total_len);
-
 	while (deq_len(deqs->deq_b) != 0)
 	{
 		if (first_is_small_move(deqs))
@@ -33,7 +55,6 @@ t_deqs	*many_sort(t_deqs *deqs)
 			deqs = sort_last(deqs);
 		deqs = pa(deqs);
 	}
-
 	deqs = end_many_sort(deqs, total_len);
 	return (deqs);
 }

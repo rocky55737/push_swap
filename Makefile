@@ -6,7 +6,7 @@
 #    By: rhong <rhong@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 22:23:30 by rhong             #+#    #+#              #
-#    Updated: 2022/11/04 19:14:39 by rhong            ###   ########.fr        #
+#    Updated: 2022/11/07 17:04:11 by rhong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 NAME_B = checker
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ./src/deq_utils.c ./src/deq_utils2.c ./src/deq_utils3.c ./src/deq_utils4.c ./src/find_move.c ./src/first_is_small_move.c ./src/free_char_ptr_arr.c ./src/hard_sort.c ./src/input_err.c ./src/main.c ./src/malloc_null_guard.c ./src/many_sort.c ./src/push_data_to_deq.c ./src/push_swap_utils.c ./src/push_swap_utils2.c ./src/push_swap_utils3.c ./src/push_swap.c ./src/set_index.c ./src/sort_five.c ./src/sort_five2.c ./src/sort_four.c ./src/sort_three.c ./src/sort.c ./src/write_err.c
+SRCS = ./src/deq_utils.c ./src/deq_utils2.c ./src/deq_utils3.c ./src/deq_utils4.c ./src/deq_utils5.c ./src/find_move_cnt.c ./src/first_is_small_move.c ./src/free_char_ptr_arr.c ./src/hard_sort.c ./src/input_err.c ./src/main.c ./src/malloc_null_guard.c ./src/many_sort.c ./src/push_data_to_deq.c ./src/push_swap_utils.c ./src/push_swap_utils2.c ./src/push_swap_utils3.c ./src/push_swap.c ./src/set_index.c ./src/sort_five.c ./src/sort_five2.c ./src/sort_four.c ./src/sort_three.c ./src/sort.c ./src/write_err.c
 SRCS_B = ./src_bonus/checker_bonus.c ./src_bonus/deq_utils_bonus.c ./src_bonus/deq_utils2_bonus.c ./src_bonus/deq_utils3_bonus.c ./src_bonus/deq_utils4_bonus.c ./src_bonus/execute_command_bonus.c ./src_bonus/free_char_ptr_arr_bonus.c ./src_bonus/input_err_bonus.c ./src_bonus/main_bonus.c ./src_bonus/malloc_null_guard_bonus.c ./src_bonus/push_data_to_deq_bonus.c ./src_bonus/push_swap_utils_bonus.c ./src_bonus/push_swap_utils2_bonus.c ./src_bonus/push_swap_utils3_bonus.c ./src_bonus/set_index_bonus.c ./src_bonus/sort_bonus.c ./src_bonus/write_err_bonus.c
 
 HEADER = ./src/push_swap.h
