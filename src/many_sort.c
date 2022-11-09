@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:28:28 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/09 18:30:18 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/09 19:21:57 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_deqs	*many_sort(t_deqs *deqs)
 	while (deq_len(deqs->deq_b) != 0)
 	{
 		moving_data = get_least_move_data(deqs);
+		deqs = judging_move(deqs, moving_data);
 		deqs = b_move(deqs, moving_data);
 		deqs = a_move(deqs, moving_data, deqs->deq_b->index);
 		deqs = pa(deqs);
