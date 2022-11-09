@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_is_small_move.c                              :+:      :+:    :+:   */
+/*   find_index_by_data.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 16:50:01 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/08 05:34:55 by rhong            ###   ########.fr       */
+/*   Created: 2022/11/09 17:54:06 by rhong             #+#    #+#             */
+/*   Updated: 2022/11/09 18:24:30 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	first_is_small_move(t_deqs *deqs)
+int	find_index_by_data(t_node *deq, int data)
 {
-	int		first_move;
-	int		last_move;
-	t_deqs	*dupped_deqs;
+	int	loc;
 
-	dupped_deqs = dup_deqs(deqs);
-	first_move = find_move_cnt(dupped_deqs);
-	free_deqs(dupped_deqs);
-	dupped_deqs = dup_deqs(deqs);
-	dupped_deqs->deq_b = tail_move_to_head(dupped_deqs->deq_b);
-	last_move = find_move_cnt(dupped_deqs);
-	free_deqs(dupped_deqs);
-	if (first_move <= last_move)
-		return (1);
-	else
-		return (0);
+	loc = 0;
+	while (deq)
+	{
+		if (deq->data == data)
+			return (loc);
+		loc++;
+		deq = deq->back;
+	}
+	return (-1);
 }

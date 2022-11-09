@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:17:36 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/08 05:06:48 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/09 18:06:56 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,13 @@ t_deqs	*rra(t_deqs	*deqs);
 t_deqs	*rrb(t_deqs	*deqs);
 t_deqs	*rrr(t_deqs	*deqs);
 
-int		find_move_cnt(t_deqs *deqs);
-
-int		first_is_small_move(t_deqs *deqs);
+int		find_a_move_cnt(t_deqs *deqs, int b_data, int b_index);
 
 void	free_char_ptr_arr(char **char_ptr_arr);
+
+int		find_index_by_data(t_node *deq, int index);
+
+int		get_least_move_data(t_deqs *deqs);
 
 t_node	*set_index(t_node *deq);
 
@@ -106,8 +108,6 @@ t_deqs	*sort_five_case_four(t_deqs *deqs);
 t_deqs	*sort_five_case_five(t_deqs *deqs);
 
 t_deqs	*many_sort(t_deqs *deqs);
-t_deqs	*sort_first(t_deqs *deqs);
-t_deqs	*sort_last(t_deqs *deqs);
 
 t_deqs	*hard_sort(t_deqs *deqs);
 
