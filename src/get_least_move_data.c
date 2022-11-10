@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:01:55 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/09 19:41:27 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/10 20:03:57 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int	get_least_move_data(t_deqs *deqs)
 	index = 0;
 	while (index < b_len)
 	{
-		if (min_move < move_cnts[index])
+		if (min_move > move_cnts[index])
 			min_move = move_cnts[index];
 		index++;
 	}
 	index = 0;
 	tmp = deqs->deq_b;
-	while (index < b_len && move_cnts[index] == min_move)
+	while (index < b_len && move_cnts[index] != min_move)
 	{
 		tmp = tmp->back;
 		index++;
@@ -59,11 +59,15 @@ int	*get_move_cnts(t_deqs *deqs)
 	while (index < b_len)
 	{
 		if (index <= b_len / 2)
-			move_cnts[index] = index + \
-			find_a_move_cnt(deqs, tmp->data, tmp->index);
+		{
+			move_cnts[index] = index;
+			move_cnts[index] += find_a_move_cnt(deqs, tmp->data, tmp->index);
+		}
 		else
-			move_cnts[index] = b_len - index + \
-			find_a_move_cnt(deqs, tmp->data, tmp->index);
+		{
+			move_cnts[index] = b_len - index;
+			move_cnts[index] += find_a_move_cnt(deqs, tmp->data, tmp->index);
+		}
 		index++;
 		tmp = tmp->back;
 	}

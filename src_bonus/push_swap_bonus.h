@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:11:53 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/07 16:11:54 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/10 16:56:51 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		deq_get_index_big(t_node *deq, int index);
 int		deq_get_index_min(t_node *deq);
 t_node	*deq_get_last_node(t_node *deq);
 
-t_deqs	*execute_command(t_deqs *deqs, char *command);
+t_deqs	*execute_command(t_deqs *deqs);
 t_deqs	*do_execute(t_deqs *deqs, char *command);
 
 void	free_char_ptr_arr(char **char_ptr_arr);
@@ -85,6 +85,8 @@ void	bubble_sort_data(int *datas, int len);
 
 void	sort(t_deqs *deqs);
 int		is_sorted(t_deqs *deqs, int total_len);
+
+char	*trim_nl(char *str);
 
 void	write_err(char	*err_msg);
 

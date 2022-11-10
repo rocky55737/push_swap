@@ -6,24 +6,34 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:11:06 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/07 16:16:54 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/10 16:59:04 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-t_deqs	*execute_command(t_deqs *deqs, char *command);
+t_deqs	*execute_command(t_deqs *deqs);
 t_deqs	*do_execute(t_deqs *deqs, char *command);
 int		is_command(char *str);
 
-t_deqs	*execute_command(t_deqs *deqs, char *command)
+t_deqs	*execute_command(t_deqs *deqs)
 {
-	if (!is_command(command))
+	char	*command;
+
+	command = trim_nl(get_next_line(0));
+	while (command)
 	{
-		write(1, "KO\n", 3);
-		exit(0);
+		if (!is_command(command))
+		{
+			write(1, "ERROR\n", 6);
+			free(deqs);
+			exit(1);
+		}
+		deqs = do_execute(deqs, command);
+		free(command);
+		command = trim_nl(get_next_line(0));
 	}
-	deqs = do_execute(deqs, command);
+	free(command);
 	return (deqs);
 }
 
@@ -47,9 +57,9 @@ t_deqs	*do_execute(t_deqs *deqs, char *command)
 		deqs = rr(deqs);
 	else if (ft_strcmp(command, "rrr") == 0)
 		deqs = rrr(deqs);
-	else if (ft_strcmp(command, "rrr") == 0)
+	else if (ft_strcmp(command, "pa") == 0)
 		deqs = pa(deqs);
-	else if (ft_strcmp(command, "rrr") == 0)
+	else if (ft_strcmp(command, "pb") == 0)
 		deqs = pb(deqs);
 	return (deqs);
 }
@@ -74,9 +84,9 @@ int	is_command(char *str)
 		return (1);
 	else if (ft_strcmp(str, "rrr") == 0)
 		return (1);
-	else if (ft_strcmp(str, "rrr") == 0)
+	else if (ft_strcmp(str, "pa") == 0)
 		return (1);
-	else if (ft_strcmp(str, "rrr") == 0)
+	else if (ft_strcmp(str, "pb") == 0)
 		return (1);
 	return (0);
 }

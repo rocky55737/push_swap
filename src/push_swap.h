@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:17:36 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/09 18:57:20 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/10 18:23:09 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ int		find_a_move_cnt(t_deqs *deqs, int b_data, int b_index);
 void	free_char_ptr_arr(char **char_ptr_arr);
 
 int		find_index_by_data(t_node *deq, int index);
+
+char	**ft_str_ptr_cat(char **src, char **dest);
 
 int		get_least_move_data(t_deqs *deqs);
 
