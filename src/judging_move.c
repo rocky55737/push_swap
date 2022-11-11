@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:41:58 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/09 19:03:59 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/11 18:01:45 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ t_deqs	*judging_move_case_one(t_deqs *deqs, int moving_data)
 		{
 			if (deq_get_index_min(deqs->deq_a) <= deq_len(deqs->deq_a) / 2)
 				deqs = rr(deqs);
+			else
+				return (deqs);
 		}
 	}
 	else
@@ -48,6 +50,8 @@ t_deqs	*judging_move_case_one(t_deqs *deqs, int moving_data)
 			if (deq_get_index_big(deqs->deq_a, tmp->index) <= \
 			deq_len(deqs->deq_a) / 2)
 				deqs = rr(deqs);
+			else
+				return (deqs);
 		}
 	}
 	return (deqs);
@@ -65,6 +69,8 @@ t_deqs	*judging_move_case_two(t_deqs *deqs, int moving_data)
 		{
 			if (deq_get_index_min(deqs->deq_a) > deq_len(deqs->deq_a) / 2)
 				deqs = rrr(deqs);
+			else
+				return (deqs);
 		}
 	}
 	else
@@ -75,6 +81,8 @@ t_deqs	*judging_move_case_two(t_deqs *deqs, int moving_data)
 			if (deq_get_index_big(deqs->deq_a, tmp->index) > \
 			deq_len(deqs->deq_a) / 2)
 				deqs = rrr(deqs);
+			else
+				return (deqs);
 		}
 	}
 	return (deqs);

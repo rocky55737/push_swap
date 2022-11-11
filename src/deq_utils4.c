@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:01:18 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/09 19:08:09 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/11 17:48:15 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	deq_get_index_big(t_node *deq, int index)
 	if (!deq)
 		return (-1);
 	ret = 0;
-	bigger_index = 30000;
+	bigger_index = 2147483647;
 	tmp = deq;
 	while (tmp)
 	{

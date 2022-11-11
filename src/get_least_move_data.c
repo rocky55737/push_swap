@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:01:55 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/10 20:03:57 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/11 17:50:07 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	get_least_move_data(t_deqs *deqs)
 	t_node	*tmp;
 
 	move_cnts = get_move_cnts(deqs);
-	min_move = 200000000;
+	min_move = 2147483647;
 	b_len = deq_len(deqs->deq_b);
 	index = 0;
 	while (index < b_len)
@@ -59,15 +59,10 @@ int	*get_move_cnts(t_deqs *deqs)
 	while (index < b_len)
 	{
 		if (index <= b_len / 2)
-		{
 			move_cnts[index] = index;
-			move_cnts[index] += find_a_move_cnt(deqs, tmp->data, tmp->index);
-		}
 		else
-		{
 			move_cnts[index] = b_len - index;
-			move_cnts[index] += find_a_move_cnt(deqs, tmp->data, tmp->index);
-		}
+		move_cnts[index] += find_a_move_cnt(deqs, tmp->data, tmp->index);
 		index++;
 		tmp = tmp->back;
 	}
