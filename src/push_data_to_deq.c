@@ -30,6 +30,7 @@ t_node	*push_str_ptr_to_deq(char **datas)
 {
 	int		cnt;
 	t_node	*ret;
+	t_node	*tmp;
 
 	cnt = 0;
 	while (datas[cnt])
@@ -37,7 +38,11 @@ t_node	*push_str_ptr_to_deq(char **datas)
 		if (cnt == 0)
 			ret = new_node(ft_atoi(datas[cnt]));
 		else
-			ret = deq_append_back(ret, new_node(ft_atoi(datas[cnt])));
+		{
+			tmp = new_node(ft_atoi(datas[cnt]));
+			ret = deq_append_back(ret, tmp);
+			free(tmp);
+		}
 		cnt++;
 	}
 	return (ret);
