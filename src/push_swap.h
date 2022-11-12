@@ -88,8 +88,6 @@ void	free_char_ptr_arr(char **char_ptr_arr);
 
 int		find_index_by_data(t_node *deq, int index);
 
-char	**ft_str_ptr_cat(char **src, char **dest);
-
 int		get_least_move_data(t_deqs *deqs);
 
 t_node	*set_index(t_node *deq);
