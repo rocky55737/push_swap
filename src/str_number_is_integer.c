@@ -1,4 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   str_number_is_integer.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/12 17:32:05 by rhong             #+#    #+#             */
+/*   Updated: 2022/11/12 17:39:58 by rhong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+
+static long long			check_sign(const char *str);
+static unsigned long long	my_atoi(const char *str);
+int							str_number_is_integer(char *str);
 
 static long long	check_sign(const char *str)
 {
@@ -36,11 +52,11 @@ int	str_number_is_integer(char *str)
 
 	sign = check_sign(str);
 	if (sign == -1)
-		str = str++;
+		str++;
 	data = my_atoi(str);
-	if (sign == 1 && result > 2147483647)
+	if (sign == 1 && data > 2147483647)
 		return (0);
-	else if (sign == -1 && result > 2147483648)
+	else if (sign == -1 && data > 2147483648)
 		return (0);
 	return (1);
 }

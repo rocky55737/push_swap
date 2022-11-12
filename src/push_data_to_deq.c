@@ -6,13 +6,14 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:16:50 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/04 19:15:24 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/12 17:37:09 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 t_node	*push_data_to_deq(int ac, char **av);
+t_node	*push_str_ptr_to_deq(char **datas);
 
 t_node	*push_data_to_deq(int ac, char **av)
 {
@@ -20,7 +21,8 @@ t_node	*push_data_to_deq(int ac, char **av)
 	char	**datas;
 
 	datas = data_parsing(av, ac);
-	ret = push_str_ptr_to_deq(ac, av);
+	ret = push_str_ptr_to_deq(datas);
+	free_char_ptr_arr(datas);
 	return (ret);
 }
 
@@ -33,9 +35,9 @@ t_node	*push_str_ptr_to_deq(char **datas)
 	while (datas[cnt])
 	{
 		if (cnt == 0)
-			ret = new_node(ft_atoi(av[cnt]));
+			ret = new_node(ft_atoi(datas[cnt]));
 		else
-			ret = deq_append_back(ret, new_node(ft_atoi(av[cnt])));
+			ret = deq_append_back(ret, new_node(ft_atoi(datas[cnt])));
 		cnt++;
 	}
 	return (ret);

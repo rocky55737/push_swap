@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   str_ptr_dup_cat.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/12 17:32:35 by rhong             #+#    #+#             */
+/*   Updated: 2022/11/12 17:44:21 by rhong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 char	**do_str_ptr_cat(char **dest, char **src, int d_start);
@@ -30,6 +42,8 @@ char	**str_ptr_dup_cat(char **dest, char **src)
 		return (0);
 	else if (src == 0)
 		return (dest);
+	else if (dest == 0)
+		return (src);
 	dest_len = str_ptr_len(dest);
 	src_len = str_ptr_len(src);
 	full_len = dest_len + src_len;

@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:28:28 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/11 18:02:26 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/12 17:53:33 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,6 @@ t_deqs	*initialize_many_sort(t_deqs *deqs, int total_len);
 t_deqs	*end_many_sort(t_deqs *deqs, int total_len);
 t_deqs	*b_move(t_deqs *deqs, int moving_data);
 t_deqs	*a_move(t_deqs *deqs, int moving_data, int moving_index);
-
-void	print_deqs(t_deqs *deqs)
-{
-	t_node	*tmp;
-
-	ft_printf("a: ");
-	tmp = deqs->deq_a;
-	while (tmp)
-	{
-		ft_printf("%d ", tmp->data);
-		tmp = tmp->back;
-	}
-	ft_printf("\n");
-	ft_printf("b: ");
-	tmp = deqs->deq_b;
-	while (tmp)
-	{
-		ft_printf("%d ", tmp->data);
-		tmp = tmp->back;
-	}
-	ft_printf("\n");
-}
 
 t_deqs	*many_sort(t_deqs *deqs)
 {

@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:41:58 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/11 18:01:45 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/12 18:07:07 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,62 +28,18 @@ t_deqs	*judging_move(t_deqs *deqs, int moving_data)
 
 t_deqs	*judging_move_case_one(t_deqs *deqs, int moving_data)
 {
-	t_node	*tmp;
-
-	tmp = deq_get_node_by_data(deqs->deq_b, moving_data);
 	if (moving_data > deq_get_max_data(deqs->deq_a))
-	{
-		while (deq_get_index_min(deqs->deq_a) != 0 && \
-		deqs->deq_b->data != moving_data)
-		{
-			if (deq_get_index_min(deqs->deq_a) <= deq_len(deqs->deq_a) / 2)
-				deqs = rr(deqs);
-			else
-				return (deqs);
-		}
-	}
+		deqs = judging_move_case_one_one(deqs, moving_data);
 	else
-	{
-		while (deq_get_index_big(deqs->deq_a, tmp->index) != 0 && \
-		deqs->deq_b->data != moving_data)
-		{
-			if (deq_get_index_big(deqs->deq_a, tmp->index) <= \
-			deq_len(deqs->deq_a) / 2)
-				deqs = rr(deqs);
-			else
-				return (deqs);
-		}
-	}
+		deqs = judging_move_case_one_two(deqs, moving_data);
 	return (deqs);
 }
 
 t_deqs	*judging_move_case_two(t_deqs *deqs, int moving_data)
 {
-	t_node	*tmp;
-
-	tmp = deq_get_node_by_data(deqs->deq_b, moving_data);
 	if (moving_data > deq_get_max_data(deqs->deq_a))
-	{
-		while (deq_get_index_min(deqs->deq_a) != 0 && \
-		deqs->deq_b->data != moving_data)
-		{
-			if (deq_get_index_min(deqs->deq_a) > deq_len(deqs->deq_a) / 2)
-				deqs = rrr(deqs);
-			else
-				return (deqs);
-		}
-	}
+		deqs = judging_move_case_two_one(deqs, moving_data);
 	else
-	{
-		while (deq_get_index_big(deqs->deq_a, tmp->index) != 0 && \
-		deqs->deq_b->data != moving_data)
-		{
-			if (deq_get_index_big(deqs->deq_a, tmp->index) > \
-			deq_len(deqs->deq_a) / 2)
-				deqs = rrr(deqs);
-			else
-				return (deqs);
-		}
-	}
+		deqs = judging_move_case_two_two(deqs, moving_data);
 	return (deqs);
 }

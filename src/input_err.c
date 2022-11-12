@@ -6,13 +6,14 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:16:19 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/10 19:41:43 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/12 18:26:08 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 int	input_err(int ac, char **av);
+int	no_repetition(char **datas);
 
 int	input_err(int ac, char **av)
 {
@@ -27,13 +28,16 @@ int	input_err(int ac, char **av)
 	if (!all_integer(datas))
 	{
 		write_err("push swap: argument is not integer\n");
+		free_char_ptr_arr(datas);
 		return (1);
 	}
 	if (!no_repetition(datas))
 	{
 		write_err("push swap: argument is duplicated\n");
+		free_char_ptr_arr(datas);
 		return (1);
 	}
+	free_char_ptr_arr(datas);
 	return (0);
 }
 
@@ -48,7 +52,7 @@ int	no_repetition(char **datas)
 		ccnt = 0;
 		while (datas[ccnt])
 		{
-			if (ccnt != cnt && datas[ccnt] == datas[cnt])
+			if (ccnt != cnt && ft_strcmp(datas[ccnt], datas[cnt]) == 0)
 				return (0);
 			ccnt++;
 		}

@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:17:36 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/10 18:23:09 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/12 18:06:37 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,10 @@ t_deqs	*sort_five_case_four(t_deqs *deqs);
 t_deqs	*sort_five_case_five(t_deqs *deqs);
 
 t_deqs	*judging_move(t_deqs *deqs, int moving_data);
+t_deqs	*judging_move_case_one_one(t_deqs *deqs, int moving_data);
+t_deqs	*judging_move_case_one_two(t_deqs *deqs, int moving_data);
+t_deqs	*judging_move_case_two_one(t_deqs *deqs, int moving_data);
+t_deqs	*judging_move_case_two_two(t_deqs *deqs, int moving_data);
 
 t_deqs	*many_sort(t_deqs *deqs);
 
