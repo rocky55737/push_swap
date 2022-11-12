@@ -37,8 +37,14 @@ t_node	*push_data_to_deq(int ac, char **av);
 
 void	write_err(char	*err_msg);
 void	malloc_null_guard(void *ptr);
+int		str_ptr_len(char **str_ptr);
+char	**str_ptr_dup_cat(char **dest, char **src);
+char	**data_parsing(char **av, int ac);
 
 int		input_err(int ac, char **av);
+int		all_integer(char **data);
+int		str_is_number(char *str);
+int		str_number_is_integer(char *str);
 
 t_node	*new_node(int data);
 t_node	*deq_append_back(t_node *deq, t_node *new_node);
