@@ -6,7 +6,7 @@
 #    By: rhong <rhong@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 22:23:30 by rhong             #+#    #+#              #
-#    Updated: 2022/11/12 18:07:46 by rhong            ###   ########.fr        #
+#    Updated: 2022/11/13 16:38:43 by rhong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME_B = checker
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ./src/all_integer.c ./src/data_parsing.c ./src/deq_utils.c ./src/deq_utils2.c ./src/deq_utils3.c ./src/deq_utils4.c ./src/deq_utils5.c ./src/find_a_move_cnt.c ./src/find_index_by_data.c ./src/free_char_ptr_arr.c ./src/get_least_move_data.c ./src/hard_sort.c ./src/input_err.c ./src/judging_move.c ./src/judging_move2.c ./src/main.c ./src/malloc_null_guard.c ./src/many_sort.c ./src/push_data_to_deq.c ./src/push_swap_utils.c ./src/push_swap_utils2.c ./src/push_swap_utils3.c ./src/push_swap.c ./src/set_index.c ./src/sort_five.c ./src/sort_five2.c ./src/sort_four.c ./src/sort_three.c ./src/sort.c ./src/str_number_is_integer.c ./src/str_ptr_dup_cat.c ./src/str_ptr_len.c ./src/write_err.c
-SRCS_B = ./src_bonus/checker_bonus.c ./src_bonus/deq_utils_bonus.c ./src_bonus/deq_utils2_bonus.c ./src_bonus/deq_utils3_bonus.c ./src_bonus/deq_utils4_bonus.c ./src_bonus/execute_command_bonus.c ./src_bonus/free_char_ptr_arr_bonus.c ./src_bonus/input_err_bonus.c ./src_bonus/main_bonus.c ./src_bonus/malloc_null_guard_bonus.c ./src_bonus/push_data_to_deq_bonus.c ./src_bonus/push_swap_utils_bonus.c ./src_bonus/push_swap_utils2_bonus.c ./src_bonus/push_swap_utils3_bonus.c ./src_bonus/set_index_bonus.c ./src_bonus/sort_bonus.c ./src_bonus/trim_nl_bonus.c ./src_bonus/write_err_bonus.c
+SRCS_B = ./src_bonus/all_integer_bonus.c ./src_bonus/data_parsing_bonus.c ./src_bonus/checker_bonus.c ./src_bonus/deq_utils_bonus.c ./src_bonus/deq_utils2_bonus.c ./src_bonus/deq_utils3_bonus.c ./src_bonus/deq_utils4_bonus.c ./src_bonus/execute_command_bonus.c ./src_bonus/free_char_ptr_arr_bonus.c ./src_bonus/input_err_bonus.c ./src_bonus/main_bonus.c ./src_bonus/malloc_null_guard_bonus.c ./src_bonus/push_data_to_deq_bonus.c ./src_bonus/push_swap_utils_bonus.c ./src_bonus/push_swap_utils2_bonus.c ./src_bonus/push_swap_utils3_bonus.c ./src_bonus/set_index_bonus.c ./src_bonus/sort_bonus.c ./src_bonus/str_number_is_integer_bonus.c ./src_bonus/str_ptr_dup_cat_bonus.c ./src_bonus/str_ptr_len_bonus.c ./src_bonus/trim_nl_bonus.c ./src_bonus/write_err_bonus.c
 
 HEADER = ./src/push_swap.h
 HEADER_B = ./src/push_swap_bonus.h

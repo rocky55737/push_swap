@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data_parsing.c                                     :+:      :+:    :+:   */
+/*   str_ptr_len_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 17:30:11 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/13 16:48:01 by rhong            ###   ########.fr       */
+/*   Created: 2022/11/12 17:32:49 by rhong             #+#    #+#             */
+/*   Updated: 2022/11/13 16:30:54 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-char	**data_parsing(char **av, int ac)
+int	str_ptr_len(char **str_ptr);
+
+int	str_ptr_len(char **str_ptr)
 {
-	char	**data;
-	char	**splitted;
-	int		cnt;
+	int	len;
 
-	data = 0;
-	cnt = 1;
-	while (cnt < ac)
+	len = 0;
+	if (str_ptr != 0)
 	{
-		if (av[cnt][0] == 0)
-		{
-			write_err("Error\n");
-			exit(1);
-		}
-		splitted = ft_split(av[cnt], ' ');
-		data = str_ptr_dup_cat(data, splitted);
-		cnt++;
+		while (str_ptr[len])
+			len++;
 	}
-	return (data);
+	return (len);
 }

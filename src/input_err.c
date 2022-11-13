@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:16:19 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/12 18:26:08 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/13 16:48:53 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@ int	input_err(int ac, char **av)
 
 	if (ac < 2)
 	{
-		write_err("push swap: more argument is required\n");
+		write_err("Error\n");
 		return (1);
 	}
 	datas = data_parsing(av, ac);
 	if (!all_integer(datas))
 	{
-		write_err("push swap: argument is not integer\n");
+		write_err("Error\n");
 		free_char_ptr_arr(datas);
 		return (1);
 	}
 	if (!no_repetition(datas))
 	{
-		write_err("push swap: argument is duplicated\n");
+		write_err("Error\n");
 		free_char_ptr_arr(datas);
 		return (1);
 	}

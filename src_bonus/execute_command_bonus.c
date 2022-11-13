@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:11:06 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/10 16:59:04 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/13 17:01:01 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ t_deqs	*execute_command(t_deqs *deqs)
 	{
 		if (!is_command(command))
 		{
-			write(1, "ERROR\n", 6);
-			free(deqs);
+			write(1, "Error\n", 6);
 			exit(1);
 		}
 		deqs = do_execute(deqs, command);

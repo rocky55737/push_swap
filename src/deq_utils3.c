@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:15:52 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/02 16:13:55 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/13 16:48:20 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	deq_get_data_by_index(t_node *deq, int index)
 
 	if (index >= deq_len(deq))
 	{
-		write_err("deq: out of range\n");
+		write_err("Error\n");
 		exit(1);
 	}
 	cnt = 0;

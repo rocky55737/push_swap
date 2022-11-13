@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:11:53 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/10 16:56:51 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/13 16:41:20 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,20 +53,23 @@ int		deq_get_index_big(t_node *deq, int index);
 int		deq_get_index_min(t_node *deq);
 t_node	*deq_get_last_node(t_node *deq);
 
+char	**data_parsing(char **av, int ac);
+
 t_deqs	*execute_command(t_deqs *deqs);
 t_deqs	*do_execute(t_deqs *deqs, char *command);
 
 void	free_char_ptr_arr(char **char_ptr_arr);
 
 int		input_err(int ac, char **av);
-int		string_input_err(char *input);
-int		str_ptr_input_err(int input_num, char **input);
+int		str_ptr_len(char **str_ptr);
+char	**str_ptr_dup_cat(char **dest, char **src);
+int		str_number_is_integer(char *str);
+int		all_integer(char **data);
+t_node	*push_data_to_deq(int ac, char **av);
 
 void	malloc_null_guard(void *ptr);
 
 t_node	*push_data_to_deq(int ac, char **av);
-t_node	*push_string_to_deq(char *str);
-t_node	*push_str_ptr_to_deq(int ac, char **av);
 
 t_deqs	*sa(t_deqs	*deqs);
 t_deqs	*sb(t_deqs	*deqs);

@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:15:15 by rhong             #+#    #+#             */
-/*   Updated: 2022/11/07 16:10:28 by rhong            ###   ########.fr       */
+/*   Updated: 2022/11/13 16:50:13 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_node	*new_node(int data)
 	new_node = (t_node *)malloc(sizeof(t_node));
 	if (new_node == 0)
 	{
-		write_err("deq malloc error\n");
+		write_err("Error\n");
 		return (0);
 	}
 	new_node->data = data;
