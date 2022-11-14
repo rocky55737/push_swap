@@ -14,6 +14,7 @@
 
 int	main(int ac, char **av)
 {
-	checker(ac, av);
+	if (ac >= 2)
+		checker(ac, av);
 	return (0);
 }
