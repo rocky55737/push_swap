@@ -19,11 +19,6 @@ int	input_err(int ac, char **av)
 {
 	char	**datas;
 
-	if (ac < 2)
-	{
-		write_err("Error\n");
-		return (1);
-	}
 	datas = data_parsing(av, ac);
 	if (!all_integer(datas))
 	{
