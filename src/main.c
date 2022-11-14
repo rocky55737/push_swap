@@ -14,6 +14,7 @@
 
 int	main(int ac, char **av)
 {
-	push_swap(ac, av);
+	if (ac >= 2)
+		push_swap(ac, av);
 	return (0);
 }
