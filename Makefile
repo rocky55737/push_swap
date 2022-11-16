@@ -6,7 +6,7 @@
 #    By: rhong <rhong@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 22:23:30 by rhong             #+#    #+#              #
-#    Updated: 2022/11/13 16:38:43 by rhong            ###   ########.fr        #
+#    Updated: 2022/11/13 17:36:04 by rhong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,11 +41,20 @@ all : $(NAME)
 $(NAME): $(TOTAL_OBJS) $(LIB)
 	$(CC) $(LFLAG) $(LIB) $(TOTAL_OBJS) -o $(NAME)
 
+bonus :
+	make $(NAME_B) WITH_BONUS=1
+
+$(NAME_B): $(TOTAL_OBJS) $(LIB) $(LIB_B)
+	$(CC) $(LFLAG) $(LFLAG_B) $(LIB) $(LIB_B) $(TOTAL_OBJS) -o $(NAME_B)
+
 ./obj/%.o : %.c
 	$(CC) $(CFLAGS) -c $<
 
 $(LIB):
 	make -j -C ./ft_printf; make bonus -j -C ./libft
+
+$(LIB_B):
+	make bonus -j -C ./get_next_line
 
 clean :
 	rm -rf $(OBJS) $(OBJS_B); make clean -C ./ft_printf; make clean -C ./libft; make clean -C ./get_next_line
@@ -56,11 +65,6 @@ fclean : clean
 re :
 	make fclean
 	make all
-
-bonus : $(OBJS_B) $(LIB) $(LIB_B)
-	$(CC) $(LFLAG) $(LFLAG_B) $(LIB) $(LIB_B) $(OBJS_B) -o $(NAME_B)
-
-$(LIB_B):
-	make bonus -j -C ./get_next_line
+	make bonus
 
 .PHONY: all clean fclean re bonus
